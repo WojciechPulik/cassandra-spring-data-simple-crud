@@ -36,6 +36,7 @@
     		<groupId>com.datastax.oss</groupId>
     		<artifactId>java-driver-core</artifactId>
     	</dependency>
+    
 		
 	</dependencies>
 

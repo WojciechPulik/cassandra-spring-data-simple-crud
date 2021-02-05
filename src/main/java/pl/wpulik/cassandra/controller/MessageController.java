@@ -59,7 +59,7 @@ public class MessageController {
 		for(Message ms : messages) {
 			try {
 				messageRepository.delete(ms);
-				System.out.println("Entity with id: " + ms.getId().toString() + " has been removed!");
+				System.out.println(ms.getEmail() + ": title \"" + ms.getTitle() + "\", email text \"" + ms.getContent() + "\"");
 			}catch(Exception e) {
 				System.err.println(e.getMessage());
 			}
