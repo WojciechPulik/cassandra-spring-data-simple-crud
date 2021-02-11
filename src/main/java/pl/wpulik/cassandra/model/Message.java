@@ -2,6 +2,11 @@ package pl.wpulik.cassandra.model;
 
 import java.util.UUID;
 
+import javax.validation.constraints.Email;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotBlank;
+
 import org.springframework.data.cassandra.core.mapping.PrimaryKey;
 import org.springframework.data.cassandra.core.mapping.Table;
 
@@ -11,9 +16,14 @@ public class Message {
 	@PrimaryKey
 	private UUID id;
 	
+	@Email
 	private String email;
+	@NotBlank
 	private String title;
+	@NotBlank
 	private String content;
+	@Max(2147483647)
+	@Min(-2147483648)
 	private int magic_number;
 	
 	public Message() {}
