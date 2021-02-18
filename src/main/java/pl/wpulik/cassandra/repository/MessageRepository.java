@@ -13,7 +13,7 @@ import pl.wpulik.cassandra.model.Message;
 public interface MessageRepository extends CassandraRepository<Message, UUID>{
 	
 	
-	@Query("SELECT * FROM message WHERE magic_number=:magic_number ALLOW FILTERING")
+	@Query("SELECT * FROM message WHERE magic_number=:magic_number")
 	Set<Message> findBy_magic_number(@Param("magic_number")int magic_number);
 	
 	List<Message> findByEmail(String email);
